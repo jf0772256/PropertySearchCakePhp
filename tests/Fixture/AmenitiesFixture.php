@@ -20,9 +20,9 @@ class AmenitiesFixture extends TestFixture
         $this->records = [
             [
                 'id' => 1,
-                'ammenity' => 'Lorem ipsum dolor sit amet',
-                'created' => '2024-02-09 14:03:24',
-                'modified' => '2024-02-09 14:03:24',
+                'amenity' => 'Lorem ipsum dolor sit amet',
+                'created' => '2024-02-09 15:32:30',
+                'modified' => '2024-02-09 15:32:30',
             ],
         ];
         parent::init();

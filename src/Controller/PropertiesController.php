@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Form\PropertySearchForm;
+
 /**
  * Properties Controller
  *
@@ -98,5 +100,25 @@ class PropertiesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function search($data = null)
+    {
+        if ($data !== null)
+        {
+            $searchForm = new PropertySearchForm();
+            if ($searchForm->execute($this->request->getData()))
+            {
+                $query = $this->Properties->find();
+                $properties = $this->paginate($query);
+            }
+        }
+        else
+        {
+            $query = $this->Properties->find();
+            $properties = $this->paginate($query);
+        }
+        // do the search
+        $this->set(compact('properties'));
     }
 }

@@ -2,7 +2,6 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Property $property
- * @var \Cake\Collection\CollectionInterface|string[] $amenities
  */
 ?>
 <div class="row">
@@ -30,7 +29,6 @@
                     echo $this->Form->control('sqft');
                     echo $this->Form->control('acres');
                     echo $this->Form->control('active');
-                    echo $this->Form->control('amenities._ids', ['options' => $amenities]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

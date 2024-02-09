@@ -32,8 +32,8 @@ class PropertiesFixture extends TestFixture
                 'sqft' => 1,
                 'acres' => 1.5,
                 'active' => 1,
-                'created' => '2024-02-09 14:03:32',
-                'modified' => '2024-02-09 14:03:32',
+                'created' => '2024-02-09 16:38:40',
+                'modified' => '2024-02-09 16:38:40',
             ],
         ];
         parent::init();

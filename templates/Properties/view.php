@@ -81,35 +81,6 @@
                     <?= $this->Text->autoParagraph(h($property->description)); ?>
                 </blockquote>
             </div>
-            <div class="related">
-                <h4><?= __('Related Amenities') ?></h4>
-                <?php if (!empty($property->amenities)) : ?>
-                <div class="table-responsive">
-                    <table>
-                        <tr>
-                            <th><?= __('Id') ?></th>
-                            <th><?= __('Ammenity') ?></th>
-                            <th><?= __('Created') ?></th>
-                            <th><?= __('Modified') ?></th>
-                            <th class="actions"><?= __('Actions') ?></th>
-                        </tr>
-                        <?php foreach ($property->amenities as $amenities) : ?>
-                        <tr>
-                            <td><?= h($amenities->id) ?></td>
-                            <td><?= h($amenities->ammenity) ?></td>
-                            <td><?= h($amenities->created) ?></td>
-                            <td><?= h($amenities->modified) ?></td>
-                            <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'Amenities', 'action' => 'view', $amenities->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'Amenities', 'action' => 'edit', $amenities->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Amenities', 'action' => 'delete', $amenities->id], ['confirm' => __('Are you sure you want to delete # {0}?', $amenities->id)]) ?>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </table>
-                </div>
-                <?php endif; ?>
-            </div>
         </div>
     </div>
 </div>
