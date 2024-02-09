@@ -11,7 +11,7 @@ use Cake\Validation\Validator;
 /**
  * Properties Model
  *
- * @property \App\Model\Table\AmmenitiesTable&\Cake\ORM\Association\BelongsToMany $Ammenities
+ * @property \App\Model\Table\AmenitiesTable&\Cake\ORM\Association\BelongsToMany $Amenities
  *
  * @method \App\Model\Entity\Property newEmptyEntity()
  * @method \App\Model\Entity\Property newEntity(array $data, array $options = [])
@@ -47,10 +47,10 @@ class PropertiesTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->belongsToMany('Ammenities', [
+        $this->belongsToMany('Amenities', [
             'foreignKey' => 'property_id',
-            'targetForeignKey' => 'ammenity_id',
-            'joinTable' => 'ammenities_properties',
+            'targetForeignKey' => 'amenity_id',
+            'joinTable' => 'amenities_properties',
         ]);
     }
 

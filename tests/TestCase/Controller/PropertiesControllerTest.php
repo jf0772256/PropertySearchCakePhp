@@ -23,8 +23,8 @@ class PropertiesControllerTest extends TestCase
      */
     protected array $fixtures = [
         'app.Properties',
-        'app.Ammenities',
-        'app.AmmenitiesProperties',
+        'app.Amenities',
+        'app.AmenitiesProperties',
     ];
 
     /**

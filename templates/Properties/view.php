@@ -82,8 +82,8 @@
                 </blockquote>
             </div>
             <div class="related">
-                <h4><?= __('Related Ammenities') ?></h4>
-                <?php if (!empty($property->ammenities)) : ?>
+                <h4><?= __('Related Amenities') ?></h4>
+                <?php if (!empty($property->amenities)) : ?>
                 <div class="table-responsive">
                     <table>
                         <tr>
@@ -93,16 +93,16 @@
                             <th><?= __('Modified') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
-                        <?php foreach ($property->ammenities as $ammenities) : ?>
+                        <?php foreach ($property->amenities as $amenities) : ?>
                         <tr>
-                            <td><?= h($ammenities->id) ?></td>
-                            <td><?= h($ammenities->ammenity) ?></td>
-                            <td><?= h($ammenities->created) ?></td>
-                            <td><?= h($ammenities->modified) ?></td>
+                            <td><?= h($amenities->id) ?></td>
+                            <td><?= h($amenities->ammenity) ?></td>
+                            <td><?= h($amenities->created) ?></td>
+                            <td><?= h($amenities->modified) ?></td>
                             <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'Ammenities', 'action' => 'view', $ammenities->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'Ammenities', 'action' => 'edit', $ammenities->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Ammenities', 'action' => 'delete', $ammenities->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ammenities->id)]) ?>
+                                <?= $this->Html->link(__('View'), ['controller' => 'Amenities', 'action' => 'view', $amenities->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['controller' => 'Amenities', 'action' => 'edit', $amenities->id]) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Amenities', 'action' => 'delete', $amenities->id], ['confirm' => __('Are you sure you want to delete # {0}?', $amenities->id)]) ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>

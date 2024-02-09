@@ -24,7 +24,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\DateTime|null $created
  * @property \Cake\I18n\DateTime|null $modified
  *
- * @property \App\Model\Entity\Ammenity[] $ammenities
+ * @property \App\Model\Entity\Amenity[] $amenities
  */
 class Property extends Entity
 {
@@ -52,6 +52,6 @@ class Property extends Entity
         'active' => true,
         'created' => true,
         'modified' => true,
-        'ammenities' => true,
+        'amenities' => true,
     ];
 }

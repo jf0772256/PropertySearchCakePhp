@@ -32,7 +32,7 @@ class PropertiesController extends AppController
      */
     public function view($id = null)
     {
-        $property = $this->Properties->get($id, contain: ['Ammenities']);
+        $property = $this->Properties->get($id, contain: ['Amenities']);
         $this->set(compact('property'));
     }
 
@@ -53,8 +53,8 @@ class PropertiesController extends AppController
             }
             $this->Flash->error(__('The property could not be saved. Please, try again.'));
         }
-        $ammenities = $this->Properties->Ammenities->find('list', limit: 200)->all();
-        $this->set(compact('property', 'ammenities'));
+        $amenities = $this->Properties->Amenities->find('list', limit: 200)->all();
+        $this->set(compact('property', 'amenities'));
     }
 
     /**
@@ -66,7 +66,7 @@ class PropertiesController extends AppController
      */
     public function edit($id = null)
     {
-        $property = $this->Properties->get($id, contain: ['Ammenities']);
+        $property = $this->Properties->get($id, contain: ['Amenities']);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $property = $this->Properties->patchEntity($property, $this->request->getData());
             if ($this->Properties->save($property)) {
@@ -76,8 +76,8 @@ class PropertiesController extends AppController
             }
             $this->Flash->error(__('The property could not be saved. Please, try again.'));
         }
-        $ammenities = $this->Properties->Ammenities->find('list', limit: 200)->all();
-        $this->set(compact('property', 'ammenities'));
+        $amenities = $this->Properties->Amenities->find('list', limit: 200)->all();
+        $this->set(compact('property', 'amenities'));
     }
 
     /**
