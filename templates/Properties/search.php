@@ -11,15 +11,43 @@
     <h3><?= __('Properties') ?></h3>
 
     <style>
+        /*
+            making room for the side filter section
+        */
         .container
         {
             max-width: 150rem;
         }
+
+        /*
+            I didnt like the default red button... I couldn't find an easy way to do it without creating custom configurations
+        */
+        form>button[type=submit]
+        {
+            background: #2f85ae;
+            border-color: #2f85ae;
+            margin-right: 1rem;
+        }
+        form>button[type=submit]:hover
+        {
+            background: #2a6496;
+            border-color: #2a6496;
+            margin-right: 1rem;
+        }
     </style>
 
     <div class="row">
-        <div class="column column-20">
-            sidebar
+        <div class="column column-20" style="border-right:1px solid #808080">
+            <h5>Filter properties</h5>
+            <?php
+                // this is the search / filter form code being laid out on the page... it's a post to the properties controller search method.
+                echo $this->Form->create($searchForm);
+                echo $this->Form->control('beds', ['type'=>'select', 'options'=>['Select Beds','1 bed','2 beds','3 beds','4 beds','5 beds','6+ beds']]);
+                echo $this->Form->control('baths',['type' => 'select', 'options'=>['Select Baths','1 bath','2 baths','3 baths','4 baths','5 baths','6+ baths']]);
+                echo $this->Form->control('price',['type' => 'select', 'options'=>[''=>'Select Price Range','<200k'=>'under 200k', '200k-500k'=>'200k-500k', '500k-1m'=>'500k-1m', '>=1m'=>'>1 mil']]);
+                echo $this->Form->button('Apply Filters');
+                echo $this->Form->end();
+            ?>
         </div>
         <div class="column">
             <div class="table-responsive">

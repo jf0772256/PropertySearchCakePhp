@@ -38,6 +38,9 @@ $cakeDescription = 'Simple Property Search';
 
 <?php if ($this->getRequest()->getUri()->getPath() === '/properties/search'): ?>
     <style>
+        /*
+            only changed when on the search page... namely to give more room
+        */
         .top-nav
         {
             max-width: 150rem;

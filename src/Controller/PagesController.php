@@ -45,6 +45,7 @@ class PagesController extends AppController
      */
     public function display(string ...$path): ?Response
     {
+        // to save time I am redirecting traffic to the search route
         return $this->redirect('/properties/search');
 //        if (!$path) {
 //            return $this->redirect('/');

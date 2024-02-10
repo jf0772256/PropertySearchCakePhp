@@ -9,12 +9,14 @@
     {
 	    protected function _buildSchema(Schema $schema): Schema
 	    {
-		    return $schema->addField('beds', ['type'=>'select', 'options'=>['Select Beds','studio','1+ beds','2+ beds','3+ beds','4+ beds','5+ beds','6+ beds']])
-			    ->addField('baths', ['type' => 'select', 'options'=>['Select Baths','1+ baths','2+ baths','3+ baths','4+ baths','5+ baths','6+ baths']])
-			    ->addField('price', ['type' => 'select', 'options'=>['Select Price Range','under 200k', '200k-500k', '500k-1m', '>1 mil']]);
+		    return $schema->addField('beds', 'string')
+			    ->addField('baths', 'string')
+			    ->addField('price', 'string');
 	    }
 		protected function _execute(array $data): bool
 	    {
-		    return count($data) > 0;
+			$populated = false;
+			if (count($data) > 0 && ($data['price'] !== '' || $data['beds'] !== '0' || $data['baths'] !== '0')) $populated = true;
+		    return $populated;
 	    }
 	}
